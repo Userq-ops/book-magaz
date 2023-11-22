@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>Онлайн-магазин книг</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="">
     <style>
         * {
@@ -11,13 +14,17 @@
 }
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+    background-color: #fdf5e6;
 }
 
 header {
-	background-color: #333;
+	background-color: #ff7d7d;
 	color: #fff;
-	padding: 20px;
+	padding: 20px 20px 0px 20px;
 }
 
 nav ul {
@@ -37,17 +44,27 @@ nav a {
 main {  
 	justify-content: space-around;
 	padding: 20px;
+    flex-grow: 1;
 }
+
+/* div {
+    background-color: white;
+    border: 1px solid black;
+} */
+
 
 .book {
 	width: 300px;
     margin-bottom: 20px;    
     display: inline-block;
     margin: auto;
+    background-color: white;
+    border: 1px solid rgb(255, 216, 216);
 }
 
 .book img {
 	width: 200px;
+    padding-top: 20px;
 }
 
 .book h2 {
@@ -69,15 +86,16 @@ main {
 	border-radius: 5px;
 	cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 20px;
 }
 
 .book button:hover {
-	background-color: #0a2bff;
+	background-color: #5d0000;
 }
 
 footer {
-	background-color: #333;
-	color: #fff;
+	background-color: #1e1e1e;
+	color: #000000;
 	padding: 20px;
 	text-align: center;
 }
@@ -120,6 +138,7 @@ footer {
 table {
 	width: 100%;
 	border-collapse: collapse;
+    font-family: 'Quicksand', sans-serif;
 }
 
 h1 {
@@ -156,174 +175,24 @@ tfoot button:hover {
 }
 
 .search {
-    position: absolute;
-    left: 600px;
-    bottom: 650px;
+    position: relative;  /* Change from absolute to relative */
+    float: right;    /* Add margin-top to create space */
+    bottom: 15px;
 }
 
 @media only screen and (max-width: 768px) {
-    * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-family: Arial, sans-serif;
-}
-
-header {
-	background-color: #333;
-	color: #fff;
-	padding: 20px;
-}
-
-nav ul {
-	list-style: none;
-	display: flex;
-}
-
-nav li {
-	margin-right: 20px;
-}
-
-nav a {
-	color: #fff;
-	text-decoration: none;
-}
-
-main {  
-	justify-content: space-around;
-	padding: 20px;
-}
-
-.book {
-	width: 300px;
-    margin-bottom: 20px;    
-    display: inline-block;
-    margin: auto;
-}
-
-.book img {
-	width: 200px;
-}
-
-.book h2 {
-	margin-top: 10px;
-	font-size: 24px;
-}
-
-.book p {
-	margin-top: 10px;
-	font-size: 16px;
-}
-
-.book button {
-	margin-top: 10px;
-	background-color: #bf4747;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-    transition: 0.3s;
-}
-
-.book button:hover {
-	background-color: #0a2bff;
-}
-
-footer {
-	background-color: #333;
-	color: #fff;
-	padding: 20px;
-	text-align: center;
-}
-
-/* Стили для модального окна */
-.modal {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-	background-color: #fff;
-	margin: 10% auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
-}
-
-.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-h1 {
-    text-align: center;
-    position: relative;
-    bottom: 10px;
-}
-
-th, td {
-	padding: 8px;
-	text-align: left;
-	border-bottom: 1px solid #ddd;
-}
-
-th {
-	background-color: #f2f2f2;
-}
-
-tfoot td {
-	font-weight: bold;
-}
-
-tfoot button {
-	background-color: #333;
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-tfoot button:hover {
-	background-color: #555;
-}
-
-.search {
-    position: absolute;
-    left: 600px;
-    bottom: 650px;
-}
+    .search {
+        position: absolute;
+        left: 50%;   
+        transform: translateX(-50%);  
+        top: 20px;
+    }
 }
     </style>
 </head>
 <body>
 	<header>
-		<h1>Онлайн-магазин книг</h1>
+		<h1>Bookie</h1>
 		<nav>
 			<ul>
 				<li><a href="#comics" onclick="navigateTo('manga')">Манги</a></li>
@@ -335,93 +204,97 @@ tfoot button:hover {
 		</nav>
         <div class="search">
             <label for="search-input">Поиск книг: </label>
-            <input type="text" id="search-input" oninput="searchBooks()">
+            <input style="border: none;" type="text" id="search-input" oninput="searchBooks()">
         </div>
 	</header>
-        <section style="display:flex; text-align: center; margin: 20px;" id="manga">
+        <section style="display:flex; text-align: center; margin: 20px; padding-bottom: 100px;" id="manga">
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2121/2120420_550.jpg">
                 <h2>Naruto</h2>
                 <p>Азбука, Графические романы</p>
-                <button class="add-to-cart" data-id="1" data-name="Naruto" data-price="4292">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="1" data-name="Naruto" data-price="4292">4292₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2253/2252104_550.jpg">
                 <h2>One Piece</h2>
                 <p>Азбука, Графические романы</p>
-                <button class="add-to-cart" data-id="2" data-name="One Piece" data-price="4304">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="2" data-name="One Piece" data-price="4304">4304₸</button>
             </div>
             <div class="book">
                 <img src="https://pm1.aminoapps.com/7497/a7ada152638f8a5b9100cfa2162afb10bfa452e7r1-682-1024v2_uhq.jpg">
                 <h2>Kimetsu no yaiba</h2>
                 <p>Азбука, Графические романы</p>
-                <button class="add-to-cart" data-id="3" data-name="Kimetsu no yaiba" data-price="5408" >Добавить в корзину</button>
+                <button class="add-to-cart" data-id="3" data-name="Kimetsu no yaiba" data-price="5408" >5408₸</button>
             </div>
           </section>
-        
-          <section style="display:flex; text-align: center; margin: 20px;" id="comics">
+
+
+          <section style="display:flex; text-align: center; margin: 20px; padding-bottom: 100px;" id="comics">
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2099/2098641_550.jpg">
                 <h2>Spider-Man</h2>
                 <p>Комильфо, Эксмо, Marvel. Альтернатива</p>
-                <button class="add-to-cart" data-id="1" data-name="Spider-Man" data-price="1220">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="1" data-name="Spider-Man" data-price="1220">1220₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2380/2379215_550.jpg">
                 <h2>Avengers</h2>
                 <p>Эксмо, Marvel. Альтернатива</p>
-                <button class="add-to-cart" data-id="2" data-name="Avengers" data-price="1144 ">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="2" data-name="Avengers" data-price="1144 ">1144₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2099/2098462_550.jpg">
                 <h2>Venom</h2>
                 <p>Комильфо, Эксмо, Marvel. Альтернатива</p>
-                <button class="add-to-cart" data-id="3" data-name="Venom" data-price="1140">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="3" data-name="Venom" data-price="1140">1140₸</button>
             </div>
           </section>
         
-          <section style="display:flex; text-align: center; margin: 20px;" id="astronomy">
+
+          <section style="display:flex; text-align: center; margin: 20px; padding-bottom: 100px;" id="astronomy">
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2658/2657013_550.jpg">
                 <h2>Космос для не космонавтов</h2>
                 <p>АСТ, История и наука Рунета. Подарочное издание</p>
-                <button class="add-to-cart" data-id="1" data-name="Космос для не космонавтов" data-price="3025">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="1" data-name="Космос для не космонавтов" data-price="3025">3025₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/1990/1989073_550.jpg">
                 <h2>Космос. Большое путешествие по Вселенной</h2>
                 <p>Эксмо, Подарочные издания. Миссия «Космос»</p>
-                <button class="add-to-cart" data-id="2" data-name="Космос. Большое путешествие по Вселенной" data-price="15616">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="2" data-name="Космос. Большое путешествие по Вселенной" data-price="15616">15616₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2428/2427786_550.jpg">
                 <h2>Философия космоса и пятое измерение</h2>
                 <p>АСТ, История и наука Рунета. Подарочное издание</p>
-                <button class="add-to-cart" data-id="3" data-name="Книга 3" data-price="3299">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="3" data-name="Книга 3" data-price="3299">3299₸</button>
             </div>
           </section>
-          <section style="display:flex; text-align: center; margin: 20px;" id="horror">
+
+
+          <section style="display:flex; text-align: center; margin: 20px; padding-bottom: 100px;" id="horror">
             <div class="book">
                 <img src="https://cdn.f.kz/prod/2409/2408276_550.jpg">
                 <h2>Оно</h2>
                 <p>АСТ, Эксклюзивная классика</p>
-                <button class="add-to-cart" data-id="1" data-name="Оно" data-price="1800">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="1" data-name="Оно" data-price="1800">1800₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/1313/1312852_550.jpg">
                 <h2>Сияние</h2>
                 <p>АСТ, Эксклюзивная классика</p>
-                <button class="add-to-cart" data-id="2" data-name="Сияние" data-price="1356">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="2" data-name="Сияние" data-price="1356">1356₸</button>
             </div>
             <div class="book">
                 <img src="https://cdn.f.kz/prod/1596/1595865_550.jpg">
                 <h2>Кэрри</h2>
                 <p>АСТ, Эксклюзивная классика</p>
-                <button class="add-to-cart" data-id="3" data-name="Кэрри" data-price="1035">Добавить в корзину</button>
+                <button class="add-to-cart" data-id="3" data-name="Кэрри" data-price="1035">1035₸</button>
             </div>
           </section>
 	<footer>
-		<p>© 2021 Онлайн-магазин книг</p>
+		<p>© 2023 Bookie</p>
 	</footer>
 	<div id="cart-modal" class="modal">
 		<div class="modal-content">
